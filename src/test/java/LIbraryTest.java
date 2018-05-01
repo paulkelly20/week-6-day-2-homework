@@ -77,6 +77,6 @@ public class LIbraryTest {
     @Test
     public void countBooksInGenreListAfterAddingBookscheckHorror(){
         library.collectBooksbyGenre();
-        assertEquals( 7 , library.collectBooksbyGenre());
+        assertEquals( 3 , library.countBooksByGenre());
     }
 }

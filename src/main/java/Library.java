@@ -25,6 +25,10 @@ public class Library {
 
     }
 
+    public HashMap getGenres(){
+        return genres;
+    }
+
     public int countBooks() {
         return books.size();
     }
@@ -42,7 +46,7 @@ public class Library {
         return genres.size();
     }
 
-    public int collectBooksbyGenre(){
+    public void collectBooksbyGenre(){
 
         ArrayList<String> emptyArray = new ArrayList<>();
 
@@ -50,7 +54,7 @@ public class Library {
 
         for (String book: emptyArray){genres.put(book, Collections.frequency(emptyArray, book) );}
 
-        return genres.get("Horror");
+
 
 
     }
@@ -60,12 +64,3 @@ public class Library {
 }
 
 
-
-//    public int getTotal() {
-//        int total = 0;
-//
-//        for (int number : this.numbers) {
-//            total += number;
-//        }
-//
-//        return total;
