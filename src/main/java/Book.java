@@ -10,4 +10,11 @@ public class Book {
     }
 
 
+    public String getName() {
+        return name;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
 }
