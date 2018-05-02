@@ -17,15 +17,7 @@ public class LIbraryTest {
         book3 = new Book("Harry Potter", "Young Adult");
         book4 = new Book("Game of Thrones", "Fantasy");
         library = new Library("CodeClan", 10);
-        library.addBook(book);
-        library.addBook(book);
-        library.addBook(book);
-        library.addBook(book);
-        library.addBook(book);
-        library.addBook(book);
-        library.addBook(book2);
-        library.addBook(book3);
-        library.addBook(book4);
+
     }
 
     @Test
@@ -35,13 +27,13 @@ public class LIbraryTest {
 
     @Test
     public void checkBooksInLIbrary(){
-        assertEquals(9, library.countBooks());
+        assertEquals(0, library.countBooks());
     }
 
     @Test
     public void addBookToLIbrary(){
         library.addBook(book);
-        assertEquals(10, library.countBooks());
+        assertEquals(1, library.countBooks());
     }
 
     @Test
@@ -65,18 +57,36 @@ public class LIbraryTest {
     public void removeBookFromLIbrary(){
         library.addBook(book);
         library.removeBook();
-        assertEquals(9, library.countBooks());
+        assertEquals(0, library.countBooks());
 
     }
 
     @Test
-    public void countBooksInGenreList(){
+    public void countBooksInGenreListExpectingZero(){
         assertEquals(0,library.countBooksByGenre());
     }
 
     @Test
-    public void countBooksInGenreListAfterAddingBookscheckHorror(){
-        library.collectBooksbyGenre();
+    public void countBooksInGenreListAfterAdding(){
+        library.addBook(book);
+        library.addBook(book3);
+        library.addBook(book4);
+        library.collectBooksByGenre();
         assertEquals( 3 , library.countBooksByGenre());
+    }
+
+    @Test
+    public void checkHowManyBooksInCertainGenre(){
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        library.collectBooksByGenre();
+        assertEquals(7, library.getGenres().get("Horror"));
     }
 }

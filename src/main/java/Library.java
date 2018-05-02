@@ -46,13 +46,15 @@ public class Library {
         return genres.size();
     }
 
-    public void collectBooksbyGenre(){
+    public void collectBooksByGenre(){
 
-        ArrayList<String> emptyArray = new ArrayList<>();
+        ArrayList<String> genreArray = new ArrayList<>();
 
-        for (Book book : this.books){ emptyArray.add(book.getGenre());}
+        for (Book book : this.books)
+            { genreArray.add(book.getGenre());}
 
-        for (String book: emptyArray){genres.put(book, Collections.frequency(emptyArray, book) );}
+        for (String book: genreArray)
+            {genres.put(book, Collections.frequency(genreArray, book) );}
 
 
 
