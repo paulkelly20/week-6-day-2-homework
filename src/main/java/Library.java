@@ -17,12 +17,10 @@ public class Library {
         this.books = new ArrayList<>();
         this.genres = new HashMap<>();
 
-
     }
 
     public String getName(){
         return name;
-
     }
 
     public HashMap getGenres(){
@@ -50,19 +48,18 @@ public class Library {
 
         ArrayList<String> genreArray = new ArrayList<>();
 
-        for (Book book : this.books)
-            { genreArray.add(book.getGenre());}
+            for (Book book : this.books)
+                { genreArray.add(book.getGenre());}
 
-        for (String book: genreArray)
-            {genres.put(book, Collections.frequency(genreArray, book) );}
-
-
-
+            for (String book: genreArray)
+                {genres.put(book, Collections.frequency(genreArray, book) );}
 
     }
 
 
-
+    public int findBooksInGenre(String genre) {
+        return genres.get(genre);
+    }
 }
 
 

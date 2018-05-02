@@ -89,4 +89,19 @@ public class LIbraryTest {
         library.collectBooksByGenre();
         assertEquals(7, library.getGenres().get("Horror"));
     }
+
+    @Test
+    public void checkHowManyBooksInCertainGenreUsingFindMethod() {
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book);
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+        library.collectBooksByGenre();
+        assertEquals(1, library.findBooksInGenre("Fantasy"));
+    }
 }
